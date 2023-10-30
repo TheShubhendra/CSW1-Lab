@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="powderblue">
+    <title>Login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+body{
+
+    background-color: #ebebeb;
+        background-color: powderblue;
+    }
+    .container{
+    margin: 200px auto;
+        max-width: 500px;
+        width: 70%;
+        text-align: center;
+        /* padding: 0.2em 100px; */
+        border-radius: 20px;
+        box-shadow: 7px 7px 20px rgb(167, 167, 167, 0.2),
+        -7px -7px 15px rgb(250, 250, 250, 0.4);
+        font-family:sans-serif;
+        color: #3b3b3b;
+        /* background: linear-gradient(45deg,#d8d8d8, #fafafa); */
+    }
+    form{
+        margin: 60px auto;
+        width: 60%;
+        max-width: 300px;
+    }
+    .header{
+        position: relative;
+        top:50px;
+        width: 100%;
+        font-size: 45px;
+       margin-top: 50px;
+        color: #555555;
+        font-family: 'Indie Flower';
+    }
+    input:not([type='radio']), select{
+        /* outline: none; */
+        border-radius: 5px;
+        width: 100%;
+        height: 20px;
+        box-shadow: inset 2px 2px 7px rgb(167, 167, 167, 0.2),
+        inset -2px -2px 7px rgb(250, 250, 250, 0.4);
+        margin-bottom: 15px;
+        padding: 15px;
+        background: none;
+        border: none;
+        transition: all .5s;
+    }
+    input:focus{
+        outline: black;
+        outline-style: solid;
+        outline-width: 1px;
+        
+    }
+
+    select{
+        padding: 0 5px;
+        height: 25px;
+    }
+    select option{
+        border-radius: 0;
+    }
+    button{
+        padding: .6em 1.2em;
+        border-radius: 10px;
+        border: none;
+        background:none;
+        margin: 2em auto;
+        box-shadow: 6px 6px 24px 0 rgba(102, 102, 102, 0.2),
+    -6px -6px 24px 0 rgba(248, 248, 248, 0.7);
+        cursor: pointer;
+    }
+    button:hover{
+    box-shadow:inset 5px 5px 24px 0 rgba(102, 102, 102, 0.2),
+    inset -5px -5px 24px 0 rgba(248, 248, 248, 0.7);
+
+    }
+
+    label:not([for$="male"]){
+        float: left;
+        margin: 0.7em 0;
+    }
+    .radio label{
+        float: none;
+    }
+    .header img{
+        animation: anim 5s;
+    }
+    @keyframes anim {
+        from{
+            transform: rotateX('0deg');
+        }
+        to{
+            transform: rotateX('360deg');
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header"><img src="https://images.squarespace-cdn.com/content/57713a8e2994cae381dd86fe/1510404984171-ODP67JSA35YQTMKZ6ATF/SOA-PNG.png?format=100w&content-type=image%2Fpng" alt=""> <div>Registration</div></div>
+        <form autocomplete="on">
+           <label for="username">Username</label><br>
+           <input type="text" name="username" placeholder="Enter Your Username" > <br>
+           <label for="mail">Email</label><br>
+           <input type="email" name="name" placeholder="Enter Your Email" > <br>
+            <label for="mobile">Mobile</label>
+            <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" /> 
+            <br>
+            
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male" >
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+        <br>
+
+            <label for="city">City</label> <br>
+            <select name="city" id="city">
+                <option>Select City</option>
+                <option value="bhubaneswar">bhubaneswar</option>
+                <option value="kolkata">kolkata</option>
+            </select>
+            <label for="password">Password</label>
+            <input type="text" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}" title="Please include at least one uppercase letter, one lowercase letter, and one digit." name="password" placeholder="Password" > <br>
+
+
+            <button type="submit">Submit</button>
+    </div>
+</body>
+</html>

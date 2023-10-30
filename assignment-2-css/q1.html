@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+         table{
+            margin: 2em auto;
+            box-shadow: 5px 5px 20px #efefef;
+            padding: 1em;
+            border-radius: 10px;
+            font-size: 20px;
+         }
+         table tr{
+            border-bottom: 1px solid;
+         }
+        table tr tr,td{
+           padding: 0.4em 0.5em;
+        }
+        table thead{
+            width: 100%;
+            background-color: #efefef;
+            padding: 0.4em 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Employees</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Sallary</th>
+                <th>City</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Elliot Elderson</td>
+                <td>Administration</td>
+                <td>152000</td>
+                <td>Berlin</td>
+            </tr>
+            <tr>
+                <td>Lorem Ipsum</td>
+                <td>Software</td>
+                <td>42000</td>
+                <td>Budapest</td>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>Content</td>
+                <td>152000</td>
+                <td>Madrid</td>
+            </tr>
+            <tr>
+                <td>Peter Parker</td>
+                <td>Human Resource</td>
+                <td>152000</td>
+                <td>Helsinki</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+</html>
