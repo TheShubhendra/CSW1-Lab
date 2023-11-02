@@ -2,26 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubbles</title>
+    <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <script>
+    const windowWidth = $("body").innerWidth();
+    const windowHeight = $(window).height();
     $(document).ready(()=>{
-        let counter = 0;
-        let interval = setInterval(createBubble, 30)
+        
+        let interval = setInterval(createBubble, 50)
         function createBubble(){
             const el = $("<div></div>");
-        
+            console.log($("body div").length)
             el.addClass("circle")
-            const left = Math.random()*100 - 50;
-            const top = Math.random()*100 - 50;
+            const left = Math.random()*80 ;
+            const top = Math.random()*80;
             const r = Math.floor(Math.random()*256);
             const g = Math.floor(Math.random()*256);
             const b = Math.floor(Math.random()*256);
             const a =(Math.random()) - 0.2;
-            const ra = Math.random()*35 + 20;
+            const ra = Math.random()*30 + 20;
 
             el.css({
                 width: ra + "px",
@@ -30,35 +31,58 @@
                 top: top + "vh",
                 backgroundColor: `rgba(${r},${g},${b},${a})`,
             });
-            el.click(function(){
-                $(this).fadeOut(100)
-            })
             el.hide()
             $("body").append(el)
             el.fadeIn(1000)
+            el.click(function(){
+                el.stop(true)
+            }) 
+            const steps =  Math.ceil(Math.min(innerWidth/ra , innerHeight/ra)) / 2
+            console.log(steps)
+            function removeCircle(){
+                console.log(el)
+                el.remove()
+            }
+
             if(Math.random()>0.5){
-                for(let i = 0; i<10; i++){
+                for(let i = 0; i<steps; i++){
                 el.animate({"width": `${ra*2}px`})
                 el.animate({"width": ra, "left": `+=${ra*2}px`})
+                el.remove()
                 el.animate({"height": `${ra*2}px`})
                 el.animate({"height": ra, "top": `+=${ra*2}px`})
                 }
-                el.animate({"opacity": 0})
+                el.animate({"opacity": 0}, 1, removeCircle)
+                
+                
 
             }else{
-                for(let i = 0; i<10; i++){
+                for(let i = 0; i<steps; i++){
                 el.animate({"height": `${ra*2}px`})
                 el.animate({"height": ra, "top": `+=${ra*2}px`})
                 el.animate({"width": `${ra*2}px`})
                 el.animate({"width": ra, "left": `+=${ra*2}px`})
                 }
-                el.animate({"opacity": 0})
-            }        
+                el.animate({"opacity": 0}, 1, removeCircle)
+               
+    
+            }
+
+            
         }
+
+
     })
 </script>
 
 <style>
+
+    html, body{
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
     .circle{
         position: absolute;
         border-radius: 25px;
