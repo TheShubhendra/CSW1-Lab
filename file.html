@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <title>What is Full Stack Web Development?</title>
+</head>
+<style>
+p{
+    text-align: center;
+    animation: anim 3s reverse 1s infinite;
+   
+}
+@keyframes anim {
+    from{
+        transform: rotate(0deg);
+        transform: translateY(50%);
+    }
+    to{
+        transform: rotate(180deg);
+        transform: translateY(10%);
+    }
+
+}
+
+.ball::before{
+    content: ' ';
+}
+.ball{
+    background-color: green;
+    padding: 5px 14px;
+    border-radius: 100%;
+}
+div{
+    padding: 5px;
+    border: 1px black solid;
+}
+</style>
+<body>
+    <h1 dropzone>My Heading: Full Stack Development</h1>
+    <p hidden>In this book we will learn about Full Stack Development.</p>
+    <h1 style="font-size: 1em;"> This is our first heading</h1>
+    <h2> This is our first heading</h2>
+    <h3> This is our first heading</h3>
+    <h4> This is our first heading</h4>
+    <h5> This is our first heading</h5>
+    <h6> This is our first heading</h6>   
+
+    <div>
+        <h2>Mr Robot</h2>
+        <img src="mrrobot.png"/>
+    </div>
+</body>
+<script>
+    for(let i=0; i<50; i++){
+        let el = document.createElement("span");
+        el.classList.add("ball");
+        el.style.left = 
+        document.body.appendChild(el)
+    }
+    
+
+    </script>
+</html>

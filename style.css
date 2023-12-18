@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ebebeb;
+    background-color: powderblue;
+}
+.container{
+    margin: 200px auto;
+    max-width: 500px;
+    width: 70%;
+    height: 300px;
+    text-align: center;
+    padding: 0.2em;
+    border-radius: 20px;
+    box-shadow: 7px 7px 20px rgb(167, 167, 167, 0.2),
+    -7px -7px 15px rgb(250, 250, 250, 0.4);
+    font-family:sans-serif;
+    color: #3b3b3b;
+    /* background: linear-gradient(45deg,#d8d8d8, #fafafa); */
+}
+.header{
+    margin: .5em;
+    font-size: 50px;
+    margin-bottom: 0.7em;
+    color: #555555;
+}
+input{
+    outline: none;
+    border-radius: 10px;
+    width: 40%;
+    height: 10px;
+    box-shadow: inset 2px 2px 7px rgb(167, 167, 167, 0.2),
+    inset -2px -2px 7px rgb(250, 250, 250, 0.4);
+    margin: .6em;
+    padding: 10px;
+    background: none;
+    border: none;
+    transition: all .5s;
+}
+
+input:focus{
+    width: 65%;
+
+}
+
+button{
+
+    padding: .3em .7em;
+    border-radius: 10px;
+    border: none;
+    background:none;
+    box-shadow: 6px 6px 24px 0 rgba(102, 102, 102, 0.2),
+-6px -6px 24px 0 rgba(248, 248, 248, 0.7);
+}
+button:hover{
+    box-shadow:inset 6px 6px 24px 0 rgba(102, 102, 102, 0.2),
+inset -6px -6px 24px 0 rgba(248, 248, 248, 0.7);
+
+}
+img{
+    animation: anim 1.4s infinite alternate-reverse;
+}
+@keyframes anim {
+    from{
+        transform: translateX(-80%) rotate(0deg);
+       
+    }
+    to{
+        transform: translateX(80%) rotate(360deg);
+    }
+}

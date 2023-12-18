@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="powderblue">
+    <title>Login</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+body{
+
+    background-color: #ebebeb;
+        background-color: powderblue;
+    }
+    .container{
+    margin: 200px auto;
+        max-width: 500px;
+        width: 70%;
+        text-align: center;
+        padding: 0.2em 100px;
+        border-radius: 20px;
+        box-shadow: 7px 7px 20px rgb(167, 167, 167, 0.2),
+        -7px -7px 15px rgb(250, 250, 250, 0.4);
+        font-family:sans-serif;
+        color: #3b3b3b;
+        /* background: linear-gradient(45deg,#d8d8d8, #fafafa); */
+    }
+    .header{
+        font-size: 45px;
+
+        margin: .5em .5em 0.7em;
+        color: #555555;
+        font-family: 'Indie Flower';
+    }
+    input:not([type='radio']), select{
+        outline: none;
+        border-radius: 5px;
+        width: 100%;
+        height: 20px;
+        box-shadow: inset 2px 2px 7px rgb(167, 167, 167, 0.2),
+        inset -2px -2px 7px rgb(250, 250, 250, 0.4);
+        margin-bottom: 15px;
+        padding: 15px;
+        background: none;
+        border: none;
+        transition: all .5s;
+    }
+    select{
+        padding: 0 5px;
+        height: 25px;
+    }
+    select option{
+        border-radius: 0;
+    }
+    button{
+        padding: .6em 1.2em;
+        border-radius: 10px;
+        border: none;
+        background:none;
+        margin: 2em auto;
+        box-shadow: 6px 6px 24px 0 rgba(102, 102, 102, 0.2),
+    -6px -6px 24px 0 rgba(248, 248, 248, 0.7);
+        cursor: pointer;
+    }
+    button:hover{
+    box-shadow:inset 5px 5px 24px 0 rgba(102, 102, 102, 0.2),
+    inset -5px -5px 24px 0 rgba(248, 248, 248, 0.7);
+
+    }
+
+    label{
+        float: left;
+        margin: 0.7em 0;
+    }
+    .radio label{
+        float: none;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header">Html Form</div>
+        <form action="submit.php" method="post">
+           <label for="name">Employee Name</label><br>
+           <input type="text" name="name" placeholder="Enter Your Name" required> <br>
+           <label for="mail">Employee Email</label><br>
+           <input type="email" name="name" placeholder="Enter Your Email" required> <br>
+
+           <label for="password">Password</label> <br>
+            <input type="password" name="password" placeholder="Password" required> <br>
+
+            <label for="city">City</label> <br>
+            <select name="city" id="city">
+                <option value="bhubaneswar">bhubaneswar</option>
+                <option value="kolkata">kolkata</option>
+            </select>
+            <div class="radio">
+            <label for="tech">Tech</label>
+            <input type="radio" id="tech" name="department" value="tech">
+            <label for="hr">HR</label>
+            <input type="radio" id="hr" name="department" value="hr">
+            <label for="fin">Finance</label>
+            <input type="radio" id="fin" name="department" value="fin">
+
+            </div>
+            <button type="submit">Submit</button>
+    </div>
+</body>
+</html>

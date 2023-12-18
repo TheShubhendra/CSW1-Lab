@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body{
+            background-color: #e7e6e6;
+        }
+        .container{
+            width: 500px;
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+            padding: 20px;
+            border-radius: 20px;
+            transform: translate(-50%, -50%);
+            background-color: rgb(255, 255, 255, 215);
+        }
+        .container input{
+            background-color: rgb(233, 233, 233);
+            height: fit-content;
+            border: none;
+            padding:10px;
+            margin: 10px;
+            border-radius: 5px;
+            color: rgb(153, 153, 153);
+            cursor: pointer;
+            font-size: 25px;
+        }
+        .container .btngroup{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .container .history{
+            height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .divider{
+            width: 2px;
+            height: 100%;
+            background-color: black;
+        }
+        .history img{
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 50px;
+            margin: 5px;
+        }
+        .result{
+            font-size: 30px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .header{
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .scoreBox{
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreBox">Score <span id="score">0</span></div>
+    <div class="container">
+        <div class="btngroup">
+            <input type="button" id="rock" value="🪨">
+            <input type="button" id="paper" value="📄">
+            <input type="button" id="scissors" value="✂️">
+        </div>
+        <div class="header">
+            <span>Player</span>
+            <span> Computer</span>
+        </div>
+        <div class="history">
+            <div class="computer">
+           
+            </div>
+            <div class="divider"></div>
+            <div class="player">
+             
+            </div>
+        </div>
+        <div class="result"><span class="text"></span><span class="emoji"></span>
+        </div>
+    </div>
+</body>
+<script>
+    let score = localStorage.getItem("score") ? localStorage.getItem("score"): 0;
+    const playerPlay = $('.history .computer');
+    const computerPlay = $(".history .player");
+    $("#score").text(score)
+$(".container input").click(function(e){
+    const choices = ["rock", "paper", "scissors"];
+    let player = this.id;
+    let computer = choices[Math.floor(Math.random()*3)];
+    let won=0;
+    if(player===computer){
+        $(".result .text").text("Tie Lol ")
+        $(".result .emoji").text("🫠")
+    }else if((computer==="rock" && player==="paper") || (computer==="paper" && player==="scissors") || (computer==="scissors" && player==="rock")){
+        $(".result .text").text("You won ")
+        $(".result .emoji").text("😎")
+        score++;
+        won=1;
+    }else{
+        $(".result .text").text("U lost baby")
+        $(".result .emoji").text("😢")
+        score--;
+        won=-1;
+    }
+    let a = $("<img/>");
+    a.attr("src", `../../../images/${player}.jpg`)
+ 
+    let b = $("<img/>");
+    b.attr("src", `../../../images/${computer}.jpg`)
+
+    if(won>0){
+        a.css({"border-color": "green"})
+        // b.css({"border-color": "red"});
+    }else if(won<0){
+        // b.css({"border-color": "green"})
+        a.css({"border-color": "red"});
+    }
+    playerPlay.prepend(a)
+    computerPlay.prepend(b)
+
+
+    $("#score").text(score)
+    $(".result .emoji").animate({
+        "tranform": "translateX(200%)"
+    })
+    $(".result .emoji").animate({
+        "font-size": "80px"
+    })
+    $(".result .emoji").animate({
+        "transform": "rotate(100deg)"
+    })
+    $(".result .emoji").animate({
+        "font-size": "25px"
+    })
+    localStorage.setItem("score", score);
+
+})
+</script>
+</html>

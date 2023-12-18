@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="powderblue">
+    <title>Login</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(176, 224, 230);
+    }
+    .container{
+        margin: 200px auto;
+        max-width: 500px;
+        width: 70%;
+        height: 300px;
+        text-align: center;
+        padding: 0.2em;
+        border-radius: 20px;
+        border: 1px rgb(255,255,255, 0.3) solid;
+        background-color: rgba(255, 255, 255, 0.308);
+        box-shadow:5px 5px 50px rgb(200,200,200, 0.8);
+        font-family:sans-serif;
+        color: #3b3b3b;
+        
+        /* background: linear-gradient(45deg,#d8d8d8, #fafafa); */
+
+    }
+    .header{
+        margin: .5em;
+        font-size: 50px;
+        margin-bottom: 0.7em;
+        color: #555555;
+    }
+    input{
+        outline: none;
+        border: 1px solid rgb(255, 255, 255, 0.4);
+        border-radius: 10px;
+        width: 40%;
+        height: 10px;
+        margin: .6em;
+        padding: 10px;
+        background: none;
+        transition: all .5s;
+    }
+
+    input:focus{
+        width: 65%;
+    }
+
+    button{
+        margin: 2.2em;
+        padding: .3em .7em;
+        border-radius: 10px;
+        border: none;
+        background:none;
+
+    }
+    .circle{
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 100%;
+        background-color: rgba(243, 26, 214, 0.5);
+        z-index: -1;
+}
+    .circle-2{
+        right: 120px;
+        bottom: 95px;
+        width: 80px;
+        height: 80px;
+        background-color: rgba(19, 167, 252, 0.5);
+}
+
+
+</style>
+<body>
+    <div class="circle"></div>
+    <div class="circle circle-2"></div>
+    <div class="container">
+        <div class="header">Login</div>
+        <input type="text" placeholder="Username"/>
+        <br>
+        <input placeholder="Password"/> <br>
+        <button>Submit</button>
+    </div>
+</body>
+</html>
