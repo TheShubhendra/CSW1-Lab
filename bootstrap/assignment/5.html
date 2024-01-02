@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" integrity="sha512-ZwR1/gSZM3ai6vCdI+LVF1zSq/5HznD3ZSTk7kajkaj4D292NLuduDCO1c/NT8Id+jE58KYLKT7hXnbtryGmMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div class="container" >
+<canvas id="canvas1" width="100%"></canvas>
+    </div>
+</form>
+</div>
+</body>
+<script>
+Chart.defaults.borderColor = 'powderblue';
+const xValues = ["Sunday", "Monday", "Tuesday", "Wedneshday", "Thursday", "Friday", "Saturday"];
+const yValues = [55, 49, 44, 24, 15, 34, 23];
+const barColors = ["red", "green","blue","orange"];
+const barChartData = {
+    labels: xValues,
+    datasets: [{
+      label: "Stock prices",
+      backgroundColor: barColors,
+      data: yValues,
+      borderColor: "blue"
+    }],
+  }
+
+new Chart("canvas1", {
+  type: "bar",
+  data: barChartData
+});
+
+</script>
+</html>
